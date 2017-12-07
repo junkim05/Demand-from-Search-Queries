@@ -1,0 +1,584 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{setspace}
+\usepackage[bottom]{footmisc}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Consumer Search and Latent Demand
+\end_layout
+
+\begin_layout Author
+Jun B.
+ Kim
+\end_layout
+
+\begin_layout Date
+December 3 2017
+\end_layout
+
+\begin_layout Abstract
+
+\end_layout
+
+\begin_layout Standard
+A very large fraction of online consumers just browse and do not make any
+ purchase.
+ Through the lens of optimal search theory, we show that such browsing histories
+ are a valuable source of information for firms to understand consumers'
+ online behaviors.
+ This paper suggest a framework that companies can use to estimate the consumer
+ demand using such browsing data only, gauge the latent demand, and estimate
+ the market expansion by product improvement or price changes.
+\end_layout
+
+\begin_layout Section
+Set-up
+\end_layout
+
+\begin_layout Standard
+Utility of consumer 
+\begin_inset Formula $i=1,\cdots,I$
+\end_inset
+
+ for option 
+\begin_inset Formula $j=1,\cdots,J$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{ij}=V_{ij}+\epsilon_{ij}+\delta_{ij},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\epsilon_{ij}$
+\end_inset
+
+ is a stochastic term known to a consumer prior to search but not to the
+ analyst.
+ The other stochastic term 
+\begin_inset Formula $\delta_{ij}$
+\end_inset
+
+ is the objective of search: this value is not known to both consumers and
+ analysts prior to search.
+ But it will be known to consumers post search and during choice.
+ Analysts will never observe this value.
+ We assume that 
+\begin_inset Formula $\epsilon_{ij}$
+\end_inset
+
+ follows type 1 Extreme Value distribution 
+\begin_inset Formula $\sim GEV(0,\tau,0)$
+\end_inset
+
+ and 
+\begin_inset Formula $\delta_{ij}$
+\end_inset
+
+ a normal distribution
+\begin_inset Formula $\sim N(0,\sigma^{2})$
+\end_inset
+
+.
+ Further, assume that both random variables are i.i.d.
+ across 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ Consumer 
+\begin_inset Formula $i$
+\end_inset
+
+'s outside utility is,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{i0}\sim V_{0}+\epsilon_{io}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In what follows, we supress subscript 
+\begin_inset Formula $i$
+\end_inset
+
+ for clarity.
+\end_layout
+
+\begin_layout Section
+Search
+\end_layout
+
+\begin_layout Standard
+Same as in Bart's note.
+\end_layout
+
+\begin_layout Section
+Outside option utility
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $u_{0}$
+\end_inset
+
+ be consumer 
+\begin_inset Formula $i$
+\end_inset
+
+'s utility of the outside option.
+ Let 
+\begin_inset Formula $j$
+\end_inset
+
+ index the options and 
+\begin_inset Formula $K$
+\end_inset
+
+ be the index of the last option searched.
+ We partition the products: searched options are 
+\begin_inset Formula $j=1,2,\cdots,K$
+\end_inset
+
+ and they are searched in this order.
+ Unsearched options are 
+\begin_inset Formula $m=K+1,\cdots,J$
+\end_inset
+
+.
+ The observation that consumer did not make any purchase in the category
+ means that the following holds,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{0}>u_{j},\;\forall j=1,2,\cdots,K.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, the corresponding probability is,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr_{i0}=Pr(V_{0}+\epsilon_{0}>V_{j}+\epsilon_{j}+\delta_{j}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Formula $\lambda_{j}=\epsilon_{j}-\epsilon_{0}\sim logistic(0,\tau,0)$
+\end_inset
+
+ and let the CDF of 
+\begin_inset Formula $\lambda_{j}+\delta_{j},$
+\end_inset
+
+ 
+\begin_inset Formula $F_{\lambda+\delta}(z)$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A semi-closed expression of 
+\begin_inset Formula $F$
+\end_inset
+
+ is found in literature.
+\end_layout
+
+\end_inset
+
+, the probability is rewritten as,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr_{i0}=F_{\lambda+\delta}(V_{0}-V_{j}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Search cost
+\end_layout
+
+\begin_layout Standard
+Note that the observation of search order and choice allows us to estimate
+ the consumer utility.
+ Given consumer taste of 
+\begin_inset Formula $\beta_{i},$
+\end_inset
+
+ we can estimate the consumer search cost.
+ Two variations in the data facilitate the estimation of search cost, which
+ we lay out in this section.
+ First we partition options: searched options are indexed as 
+\begin_inset Formula $S=<j=1,2,\cdots,K>$
+\end_inset
+
+ and they are searched in this order.
+ Unsearched options are 
+\begin_inset Formula $S^{C}=\{m,\;m=K+1,\cdots,J\}$
+\end_inset
+
+, and 
+\begin_inset Formula $\ell=0$
+\end_inset
+
+ is the outside option.
+ Assume that 
+\begin_inset Formula $\ell<k=\ell+1,\cdots,K-1,K$
+\end_inset
+
+ among the searched options.
+ That is, 
+\begin_inset Formula $k$
+\end_inset
+
+ indexes any option searched after 
+\begin_inset Formula $\ell$
+\end_inset
+
+ during the search process.
+ From this set of observations, the follwing two equations must be true.
+ First, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{0}<z_{k},\;\forall k=\ell+1,\cdots,K,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so that consumers continue searching even after 
+\begin_inset Formula $\ell$
+\end_inset
+
+.
+ Second,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{0}>z_{m},\;\forall m=K+1,\cdots,J,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so that consumer stops searching at 
+\begin_inset Formula $K$
+\end_inset
+
+.
+ Our goal in this section is to find the corresponding probability expression
+ of 
+\begin_inset Formula $Pr(u_{0}<z_{k},\:u_{0}>z_{m})$
+\end_inset
+
+ for the above events.
+ To that end, we first compute 
+\begin_inset Formula $k$
+\end_inset
+
+'s reservation utility,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z_{k}=-c+{\displaystyle \int_{z_{k}}^{\infty}u_{k}\cdot f(u_{k})\cdot du_{k},}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $c$
+\end_inset
+
+ is the search cost common to all options.
+ Since the error term of 
+\begin_inset Formula $\delta_{k}$
+\end_inset
+
+ follows a normal distribution, 
+\begin_inset Formula $z_{k}$
+\end_inset
+
+'s reservation utility conditional on 
+\begin_inset Formula $\epsilon_{k}$
+\end_inset
+
+, 
+\begin_inset Formula $z_{k}|\epsilon_{k}$
+\end_inset
+
+, is expressed as,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+z_{k}|\epsilon_{k}=V_{k}+\epsilon_{k}+\zeta(\frac{c}{\sigma/\sqrt{2}})\cdot(\sigma/\sqrt{2}).\label{eq:CondZ}
+\end{equation}
+
+\end_inset
+
+ Therefore, 
+\begin_inset Formula $z_{k}$
+\end_inset
+
+'s unconditional reservation utility is,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z_{k}={\displaystyle \int_{-\infty}^{\infty}(z_{k}|\epsilon_{k})\cdot f(\epsilon_{k})\cdot d\epsilon_{k}.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Formula $\epsilon_{k}$
+\end_inset
+
+ is an extreme value type 1 random variable.
+ Evaluation of the above integration leads to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z_{k}={\displaystyle \int_{-\infty}^{\infty}(V_{k}+\epsilon_{k}+\zeta(c,\sigma))\cdot f(\epsilon_{k})\cdot d\epsilon_{k}}={\displaystyle \int_{-\infty}^{\infty}(V_{k}+\zeta(c,\sigma))\cdot f(\epsilon_{k})\cdot d\epsilon_{k}+\int_{-\infty}^{\infty}\epsilon_{k}\cdot f(\epsilon_{k})\cdot d\epsilon_{k}.}
+\]
+
+\end_inset
+
+Since the second term in the integration is equal to 
+\begin_inset Formula $\gamma\cdot\tau,$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z_{k}=V_{k}+\zeta(c,\sigma)+\gamma\cdot\tau,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ is an Euler constant.
+ Note that the only unknown parameter in 
+\begin_inset Formula $z_{k}$
+\end_inset
+
+ is 
+\begin_inset Formula $c.$
+\end_inset
+
+ The rest is all known including 
+\begin_inset Formula $V_{k}.$
+\end_inset
+
+ The probability of Pr
+\begin_inset Formula $(u_{0}<z_{k})$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\textrm{Pr}(u_{0}<z_{k})=\textrm{Pr}(\delta_{0}<z_{k}-V_{0})=\Phi(z_{k}-V_{0}).
+\]
+
+\end_inset
+
+Therefore the overall likelihood for the search cost is,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Pr_{i}=\prod_{k=\ell+1}^{K}\Pr(u_{\ell}<z_{k})\cdot\prod_{m=K+1}^{J}\left(1-\Pr(u_{\ell}<z_{m})\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\prod_{k=\ell+1}^{K}\Phi(z_{k}-V_{0})\cdot\prod_{m=K+1}^{J}\left(1-\Phi(z_{m}-V_{0})\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Simulation
+\end_layout
+
+\begin_layout Standard
+Once we estimate demand primitives of consumer preference and search cost,
+ and utility of outside options, we can conduct simulation studies to estimate
+ incremental sales if the manufacturers changes marketing mix variables
+ such as product features or price.
+ For instance, if some manufacturers lowers their prices, consumers who
+ chose outside option may choose to buy, leading to market expansion.
+\end_layout
+
+\end_body
+\end_document
