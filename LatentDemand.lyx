@@ -85,13 +85,8 @@
 Consumer Search and Latent Demand
 \end_layout
 
-\begin_layout Author
-Jun B.
- Kim
-\end_layout
-
 \begin_layout Date
-December 3 2017
+December 7 2017
 \end_layout
 
 \begin_layout Abstract
@@ -99,14 +94,16 @@ December 3 2017
 \end_layout
 
 \begin_layout Standard
-A very large fraction of online consumers just browse and do not make any
- purchase.
- Through the lens of optimal search theory, we show that such browsing histories
- are a valuable source of information for firms to understand consumers'
- online behaviors.
- This paper suggest a framework that companies can use to estimate the consumer
- demand using such browsing data only, gauge the latent demand, and estimate
- the market expansion by product improvement or price changes.
+A very large fraction of online consumers typically just browse and do not
+ make any purchase.
+ In this paper, we estimate the latent demand from the browsing data through
+ the lens of optimal search theory.
+ In doing so, we demonstrate that consumer browsing histories even without
+ choice incidence are a valuable source of information for firms to understand
+ consumers.
+ As an empirical application, we further gauage the potential demand that
+ may be realized by firm side changes such as product improvement or price
+ changes.
 \end_layout
 
 \begin_layout Section
@@ -147,15 +144,15 @@ where
 \begin_inset Formula $\delta_{ij}$
 \end_inset
 
- is the objective of search: this value is not known to both consumers and
- analysts prior to search.
- But it will be known to consumers post search and during choice.
- Analysts will never observe this value.
+ is the objective of search: this value is not known to consumers prior
+ to search.
+ Upon search (and during choice), it will be known to consumers.
+ Analysts does not observe this quantity.
  We assume that 
 \begin_inset Formula $\epsilon_{ij}$
 \end_inset
 
- follows type 1 Extreme Value distribution 
+ follows Extreme Value Type 1 distribution 
 \begin_inset Formula $\sim GEV(0,\tau,0)$
 \end_inset
 
@@ -178,7 +175,7 @@ where
 \end_inset
 
 .
- Consumer 
+ Lastly, consumer 
 \begin_inset Formula $i$
 \end_inset
 
@@ -188,16 +185,26 @@ where
 \begin_layout Standard
 \begin_inset Formula 
 \[
-u_{i0}\sim V_{0}+\epsilon_{io}
+u_{i0}\sim V_{0}+\epsilon_{io},
 \]
 
 \end_inset
 
+where 
+\begin_inset Formula $\epsilon_{i0}\sim GEV(0,\tau,0)$
+\end_inset
 
-\end_layout
+ and is i.i.d.
+ across 
+\begin_inset Formula $j=0,\cdots,J$
+\end_inset
 
-\begin_layout Standard
-In what follows, we supress subscript 
+.
+ We assume that consumers are endowed with the known outside utility prior
+ to search.
+ Therefore, there is nothing for them to search for about outside option:
+ outside utility has only one error term compared to inner options.
+ In what follows, we supress subscript 
 \begin_inset Formula $i$
 \end_inset
 
@@ -205,7 +212,7 @@ In what follows, we supress subscript
 \end_layout
 
 \begin_layout Section
-Search
+Search order
 \end_layout
 
 \begin_layout Standard
@@ -213,7 +220,7 @@ Same as in Bart's note.
 \end_layout
 
 \begin_layout Section
-Outside option utility
+Choice of outside option
 \end_layout
 
 \begin_layout Standard
@@ -227,7 +234,7 @@ Let
 
 's utility of the outside option.
  Let 
-\begin_inset Formula $j$
+\begin_inset Formula $k$
 \end_inset
 
  index the options and 
@@ -235,39 +242,36 @@ Let
 \end_inset
 
  be the index of the last option searched.
- We partition the products: searched options are 
-\begin_inset Formula $j=1,2,\cdots,K$
+ First, we partition the products: searched options are 
+\begin_inset Formula $k=<1,2,\cdots,K>$
 \end_inset
 
  and they are searched in this order.
  Unsearched options are 
-\begin_inset Formula $m=K+1,\cdots,J$
+\begin_inset Formula $m=\{K+1,\cdots,J\}$
 \end_inset
 
 .
- The observation that consumer did not make any purchase in the category
- means that the following holds,
+ The observation that consumer did not make any purchase means that the
+ following must be true,
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-u_{0}>u_{j},\;\forall j=1,2,\cdots,K.
+u_{0}>u_{k},\;k=1,2,\cdots,K.
 \]
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Therefore, the corresponding probability is,
+Note that the above provides the lower bound for the outside utility.
+ The probability of observing the above set of events is,
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Pr_{i0}=Pr(V_{0}+\epsilon_{0}>V_{j}+\epsilon_{j}+\delta_{j}).
+Pr_{0}=Pr(V_{0}+\epsilon_{0}>V_{k}+\epsilon_{k}+\delta_{k}).
 \]
 
 \end_inset
@@ -277,38 +281,26 @@ Pr_{i0}=Pr(V_{0}+\epsilon_{0}>V_{j}+\epsilon_{j}+\delta_{j}).
 
 \begin_layout Standard
 Note that 
-\begin_inset Formula $\lambda_{j}=\epsilon_{j}-\epsilon_{0}\sim logistic(0,\tau,0)$
+\begin_inset Formula $\lambda_{k}=\epsilon_{k}-\epsilon_{0}\sim logistic(0,\tau,0)$
 \end_inset
 
- and let the CDF of 
-\begin_inset Formula $\lambda_{j}+\delta_{j},$
+.
+ In addition, the expression for the CDF of 
+\begin_inset Formula $\lambda_{k}+\delta_{k},$
 \end_inset
 
- 
+ a linear combination of a logistic and normal random variables, 
 \begin_inset Formula $F_{\lambda+\delta}(z)$
 \end_inset
 
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-A semi-closed expression of 
-\begin_inset Formula $F$
-\end_inset
-
- is found in literature.
-\end_layout
-
-\end_inset
-
-, the probability is rewritten as,
+, is found in Gupta and Nadarajah (2008).
+ The above probability is rewritten as,
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Pr_{i0}=F_{\lambda+\delta}(V_{0}-V_{j}).
+Pr_{0}=Pr(\lambda_{k}+\delta_{k}<V_{0}-V_{k})=F_{\lambda+\delta}(V_{0}-V_{k}).
 \]
 
 \end_inset
@@ -317,55 +309,44 @@ Pr_{i0}=F_{\lambda+\delta}(V_{0}-V_{j}).
 \end_layout
 
 \begin_layout Section
-Search cost
+Stopping rule
 \end_layout
 
 \begin_layout Standard
-Note that the observation of search order and choice allows us to estimate
- the consumer utility.
+Note that the observation of search order allows us to estimate the consumer
+ utility in Section 2.
  Given consumer taste of 
 \begin_inset Formula $\beta_{i},$
 \end_inset
 
- we can estimate the consumer search cost.
- Two variations in the data facilitate the estimation of search cost, which
- we lay out in this section.
- First we partition options: searched options are indexed as 
-\begin_inset Formula $S=<j=1,2,\cdots,K>$
+ the stopping rule allows us to estimate consumer search cost.
+ In addition, it provides more conditions for the outside utility.
+ First, given that consumers kept searching until 
+\begin_inset Formula $K,$
 \end_inset
 
- and they are searched in this order.
- Unsearched options are 
-\begin_inset Formula $S^{C}=\{m,\;m=K+1,\cdots,J\}$
-\end_inset
-
-, and 
-\begin_inset Formula $\ell=0$
-\end_inset
-
- is the outside option.
- Assume that 
-\begin_inset Formula $\ell<k=\ell+1,\cdots,K-1,K$
-\end_inset
-
- among the searched options.
- That is, 
-\begin_inset Formula $k$
-\end_inset
-
- indexes any option searched after 
-\begin_inset Formula $\ell$
-\end_inset
-
- during the search process.
- From this set of observations, the follwing two equations must be true.
- First, 
+ the following must be true, 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-u_{0}<z_{k},\;\forall k=\ell+1,\cdots,K,
+u_{0}<z_{k},\;k=1,\cdots,K.
+\]
+
+\end_inset
+
+Second, given that consumer stopped searching at 
+\begin_inset Formula $K,$
+\end_inset
+
+ the following must also be true,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{0}>z_{m},\;\forall m=K+1,\cdots,J.
 \]
 
 \end_inset
@@ -374,37 +355,11 @@ u_{0}<z_{k},\;\forall k=\ell+1,\cdots,K,
 \end_layout
 
 \begin_layout Standard
-so that consumers continue searching even after 
-\begin_inset Formula $\ell$
-\end_inset
-
-.
- Second,
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-u_{0}>z_{m},\;\forall m=K+1,\cdots,J,
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-so that consumer stops searching at 
-\begin_inset Formula $K$
-\end_inset
-
-.
- Our goal in this section is to find the corresponding probability expression
- of 
+We find the expression for the probability of 
 \begin_inset Formula $Pr(u_{0}<z_{k},\:u_{0}>z_{m})$
 \end_inset
 
- for the above events.
+.
  To that end, we first compute 
 \begin_inset Formula $k$
 \end_inset
@@ -451,7 +406,7 @@ where
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-z_{k}|\epsilon_{k}=V_{k}+\epsilon_{k}+\zeta(\frac{c}{\sigma/\sqrt{2}})\cdot(\sigma/\sqrt{2}).\label{eq:CondZ}
+z_{k}|\epsilon_{k}=V_{k}+\epsilon_{k}+\zeta(\frac{c}{\sigma})\cdot\sigma.\label{eq:CondZ}
 \end{equation}
 
 \end_inset
@@ -486,12 +441,12 @@ Note that
 \begin_layout Standard
 \begin_inset Formula 
 \[
-z_{k}={\displaystyle \int_{-\infty}^{\infty}(V_{k}+\epsilon_{k}+\zeta(c,\sigma))\cdot f(\epsilon_{k})\cdot d\epsilon_{k}}={\displaystyle \int_{-\infty}^{\infty}(V_{k}+\zeta(c,\sigma))\cdot f(\epsilon_{k})\cdot d\epsilon_{k}+\int_{-\infty}^{\infty}\epsilon_{k}\cdot f(\epsilon_{k})\cdot d\epsilon_{k}.}
+z_{k}={\displaystyle \int_{-\infty}^{\infty}(V_{k}+\epsilon_{k}+\zeta(\frac{c}{\sigma})\cdot\sigma)\cdot f(\epsilon_{k})\cdot d\epsilon_{k}}={\displaystyle \int_{-\infty}^{\infty}(V_{k}+\zeta(\frac{c}{\sigma})\cdot\sigma)\cdot f(\epsilon_{k})\cdot d\epsilon_{k}+\int_{-\infty}^{\infty}\epsilon_{k}\cdot f(\epsilon_{k})\cdot d\epsilon_{k}.}
 \]
 
 \end_inset
 
-Since the second term in the integration is equal to 
+Since the second term in the integration equals to 
 \begin_inset Formula $\gamma\cdot\tau,$
 \end_inset
 
@@ -501,7 +456,7 @@ Since the second term in the integration is equal to
 \begin_layout Standard
 \begin_inset Formula 
 \[
-z_{k}=V_{k}+\zeta(c,\sigma)+\gamma\cdot\tau,
+z_{k}=V_{k}+\zeta(\frac{c}{\sigma})\cdot\sigma+\gamma\cdot\tau,
 \]
 
 \end_inset
@@ -523,10 +478,6 @@ where
 \begin_inset Formula $c.$
 \end_inset
 
- The rest is all known including 
-\begin_inset Formula $V_{k}.$
-\end_inset
-
  The probability of Pr
 \begin_inset Formula $(u_{0}<z_{k})$
 \end_inset
@@ -537,18 +488,7 @@ where
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\textrm{Pr}(u_{0}<z_{k})=\textrm{Pr}(\delta_{0}<z_{k}-V_{0})=\Phi(z_{k}-V_{0}).
-\]
-
-\end_inset
-
-Therefore the overall likelihood for the search cost is,
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-Pr_{i}=\prod_{k=\ell+1}^{K}\Pr(u_{\ell}<z_{k})\cdot\prod_{m=K+1}^{J}\left(1-\Pr(u_{\ell}<z_{m})\right)
+\textrm{Pr}(u_{0}<z_{k})=\textrm{Pr}(\delta_{0}<z_{k}-V_{0})=\Phi(z_{k}-V_{0}),
 \]
 
 \end_inset
@@ -557,9 +497,29 @@ Pr_{i}=\prod_{k=\ell+1}^{K}\Pr(u_{\ell}<z_{k})\cdot\prod_{m=K+1}^{J}\left(1-\Pr(
 \end_layout
 
 \begin_layout Standard
+where 
+\begin_inset Formula $\Phi$
+\end_inset
+
+is the normal CDF.
+ Therefore, the overall likelihood is,
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-=\prod_{k=\ell+1}^{K}\Phi(z_{k}-V_{0})\cdot\prod_{m=K+1}^{J}\left(1-\Phi(z_{m}-V_{0})\right)
+Pr_{i}=\prod_{k=1}^{K}\Pr(u_{0}<z_{k})\cdot\prod_{m=K+1}^{J}\Pr(u_{0}>z_{m})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\prod_{k=1}^{K}\Phi(z_{k}-V_{0})\cdot\prod_{m=K+1}^{J}\left(1-\Phi(z_{m}-V_{0})\right).
 \]
 
 \end_inset
@@ -572,12 +532,13 @@ Simulation
 \end_layout
 
 \begin_layout Standard
-Once we estimate demand primitives of consumer preference and search cost,
- and utility of outside options, we can conduct simulation studies to estimate
- incremental sales if the manufacturers changes marketing mix variables
- such as product features or price.
+Once we estimate the demand primitives of consumer preference and search
+ cost, and utility of outside options, we can conduct simulation studies
+ to estimate incremental sales if the manufacturers changes marketing mix
+ variables such as product features or price.
  For instance, if some manufacturers lowers their prices, consumers who
- chose outside option may choose to buy, leading to market expansion.
+ initially chose outside option may choose to buy, leading to a market expansion.
+ We acheive this using browsing data alone.
 \end_layout
 
 \end_body
